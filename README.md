@@ -1,1 +1,1 @@
-# openbox
+# my openbox configs
