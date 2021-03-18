@@ -1,0 +1,54 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# If you want to use GNOME config tools...
+#
+#if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
+#  /usr/lib/openbox/gnome-settings-daemon &
+#elif which gnome-settings-daemon >/dev/null 2>&1; then
+#  gnome-settings-daemon &
+#fi
+
+# If you want to use XFCE config tools...
+#
+#xfce-mcs-manager &
+
+# conky run 
+/home/mega/mconkykfg/sideone/./conkyOPENBOX.sh &
+
+# make screen more vivd
+# xgamma -quiet -rgamma 1.05 -ggamma 1.03 -bgamma 0.970 &
+xgamma -quiet -rgamma 1.06 -ggamma 1.03 -bgamma 0.970 &
+
+# Set tapping on touchpad on:
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1 &
+
+# change keyboard layout
+setxkbmap -layout "us,ara" -option "grp:win_space_toggle" &
+
+# wallpaper
+feh --bg-scale Pictures/adwaita-day.jpg &
+
+#albert
+albert &
+
+# activate transparent 
+xcompmgr &
+
+#
+numlockx &
+
+# Make GTK apps look and behave how they were set up in the gnome config tools
+if test -x /usr/libexec/gnome-settings-daemon >/dev/null; then
+  /usr/libexec/gnome-settings-daemon &
+elif which gnome-settings-daemon >/dev/null; then
+  gnome-settings-daemon &
+# Make GTK apps look and behave how they were set up in the XFCE config tools
+elif which xfce-mcs-manager >/dev/null; then
+  xfce-mcs-manager n &
+fi
+
+
