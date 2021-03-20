@@ -42,8 +42,12 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Adwaita-maia-dark-me</name>
+    <!--
+    <cornerRadius>4</cornerRadius>
+    <cornerRadius menu="yes">4</cornerRadius>
+    <name>memoopenbox</name>
     <titleLayout>LIMC</titleLayout>
+  -->
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -110,6 +114,8 @@
       <slant>normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
+    <titleLayout>LIMC</titleLayout>
+    <name>memoopenbox</name>
   </theme>
   <desktops>
     <!-- this stuff is only used at startup, pagers allow you to change them
@@ -120,7 +126,7 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>2</number>
     <firstdesk>1</firstdesk>
     <names>
       <!-- set names up here if you want to, like this:
@@ -153,31 +159,30 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>10</top>
-    <bottom>10</bottom>
-    <left>10</left>
-    <right>10</right>
+    <top>5</top>
+    <bottom>5</bottom>
+    <left>5</left>
+    <right>5</right>
   </margins>
   <dock>
-    <position>TopLeft</position>
+    <position>Floating</position>
     <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
-    <floatingX>0</floatingX>
-    <floatingY>0</floatingY>
+    <floatingX>535</floatingX>
+    <floatingY>700</floatingY>
     <noStrut>no</noStrut>
     <stacking>Above</stacking>
     <!-- 'Above', 'Normal', or 'Below' -->
-    <direction>Vertical</direction>
+    <direction>Horizontal</direction>
     <!-- 'Vertical' or 'Horizontal' -->
     <autoHide>no</autoHide>
-    <hideDelay>300</hideDelay>
+    <hideDelay>100</hideDelay>
     <!-- in milliseconds (1000 = 1 second) -->
-    <showDelay>300</showDelay>
+    <showDelay>100</showDelay>
     <!-- in milliseconds (1000 = 1 second) -->
     <moveButton>Middle</moveButton>
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
-    <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
@@ -259,11 +264,11 @@
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
-    <keybind key="A-space">
+    <!--    <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>
       </action>
-    </keybind>
+    </keybind> -->
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
@@ -283,7 +288,8 @@
       </finalactions>
     </action>
   </keybind> -->
-    <keybind key="C-A-Tab">
+    <!-- not need now -->
+    <!--   <keybind key="C-A-Tab">
       <action name="NextWindow">
         <panels>yes</panels>
         <desktop>yes</desktop>
@@ -293,7 +299,7 @@
           <action name="Unshade"/>
         </finalactions>
       </action>
-    </keybind>
+    </keybind> -->
     <!-- Keybindings for window switching with the arrow keys -->
     <keybind key="W-S-Right">
       <action name="DirectionalCycleWindows">
@@ -315,67 +321,56 @@
         <direction>down</direction>
       </action>
     </keybind>
-   
     <!-- gnome-terminal -->
     <keybind key="C-A-z">
       <action name="execute">
         <execute>gnome-terminal</execute>
       </action>
     </keybind>
-    
     <!-- conky -->
     <keybind key="F1">
       <action name="execute">
         <execute>~/mconkykfg/./toggleconkyopenbox</execute>
       </action>
     </keybind>
-    
-     <keybind key="W-Right">       
-     <action name="UnmaximizeFull"/>       
-     <action name="MaximizeVert"/>       
-     <action name="MoveResizeTo">         
-     <width>50%</width>       
-     </action>       
-     <action name="MoveToEdgeEast"/>     
-     </keybind>     
-     
-     <keybind key="W-Left">       
-     <action name="UnmaximizeFull"/>       
-     <action name="MaximizeVert"/>       
-     <action name="MoveResizeTo">         
-     <width>50%</width>          
-     </action>       
-     <action name="MoveToEdgeWest"/>     
-     </keybind>     
-     
-     <keybind key="W-Up">       
-     <action name="MaximizeFull"/>     
-     </keybind>     
-     
-     <keybind key="W-Down">       
-     <action name="UnmaximizeFull"/>       
-     <action name="MoveResizeTo">         
-     <width>80%</width>        
-      <height>80%</height>       
-      </action>       
-      <action name="MoveToCenter"/>     
-      </keybind>
- 
- 
- 
-  <keybind key="XF86MonBrightnessUp">
-       <action name="Execute">
-         <command>xbacklight +5</command>
-       </action>
-     </keybind>
-     <keybind key="XF86MonBrightnessDown">
-       <action name="Execute">
-         <command>xbacklight -5</command>
-       </action>
+    <keybind key="W-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+      </action>
+      <action name="MoveToEdgeEast"/>
     </keybind>
-    
-    
-  <!--   <keybind key="XF86AudioRaiseVolume">
+    <keybind key="W-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+      </action>
+      <action name="MoveToEdgeWest"/>
+    </keybind>
+    <keybind key="W-Up">
+      <action name="MaximizeFull"/>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <width>80%</width>
+        <height>80%</height>
+      </action>
+      <action name="MoveToCenter"/>
+    </keybind>
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+        <command>xbacklight +5</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+        <command>xbacklight -5</command>
+      </action>
+    </keybind>
+    <!--   <keybind key="XF86AudioRaiseVolume">
      <action name="Execute"> 
        <command>amixer set Master 10%+</command>
      </action>
@@ -390,25 +385,22 @@
        <command>amixer set Master toggle</command>
      </action>
   </keybind> -->
-  
-  <keybind key="XF86AudioRaiseVolume">
-  <action name="Execute">
-    <command>pactl -- set-sink-volume 0 +2%</command>
-  </action>
-</keybind>
-<keybind key="XF86AudioLowerVolume">
-  <action name="Execute">
-    <command>pactl -- set-sink-volume 0 -2%</command>
-  </action>
-</keybind>
-<keybind key="XF86AudioMute">
-     <action name="Execute"> 
-       <command>amixer set Master toggle</command>
-     </action>
-  </keybind>
-  
-  
-  <keybind key="W-l">
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <command>pactl -- set-sink-volume 0 +2%</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>pactl -- set-sink-volume 0 -2%</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+        <command>amixer set Master toggle</command>
+      </action>
+    </keybind>
+    <keybind key="W-l">
       <action name="Execute">
         <startupnotify>
           <enabled>false</enabled>
@@ -417,7 +409,16 @@
         <command>xscreensaver-command -lock</command>
       </action>
     </keybind>
-    
+    <!--  screenshot  -->
+    <keybind key="Print">
+      <action name="Execute">
+       <startupnotify>
+        <enabled>true</enabled>
+        <name>gnome-screenshot</name>
+       </startupnotify>
+        <command>gnome-screenshot</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
@@ -779,7 +780,7 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
-      <application class="Firefox">
+    <application class="Firefox">
       <decor>no</decor>
     </application>
     <!--

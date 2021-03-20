@@ -30,15 +30,16 @@
 </menu>
 
 <menu id="apps-editors-menu" label="Editors">
-  <item label="GVim">
+  <item label="Atom">
     <action name="Execute">
-      <command>gvim</command>
+      <command>atom</command>
       <startupnotify>
         <enabled>yes</enabled>
-        <wmclass>GVim</wmclass>
+        <wmclass>Atom</wmclass>
       </startupnotify>
     </action>
   </item>
+  
   <item label="Emacs">
     <action name="Execute">
       <command>emacs</command>
@@ -48,25 +49,10 @@
       </startupnotify>
     </action>
   </item>
+  
   <item label="GEdit">
     <action name="Execute">
       <command>gedit</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Kate">
-    <action name="Execute">
-      <command>kate</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Kwrite">
-    <action name="Execute">
-      <command>kwrite</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -238,39 +224,6 @@
       </startupnotify>
     </action>
   </item>
-  <item label="Thunar">
-    <action name="Execute">
-      <command>Thunar</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="KDE File Manager">
-    <action name="Execute">
-      <command>kfmclient openURL ~</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Rox">
-    <action name="Execute">
-      <command>rox</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-        <wmclass>ROX-Filer</wmclass>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="PCMan File Manager">
-    <action name="Execute">
-      <command>pcmanfm</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
 </menu>
 
 <menu id="apps-graphics-menu" label="Graphics">
@@ -321,6 +274,14 @@
       <startupnotify><enabled>yes</enabled></startupnotify>
     </action>
   </item>
+  
+  <item label="Network manager">
+    <action name="Execute">
+      <command>nm-connection-editor </command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  
   <item label="Manage Cups Printers">
     <action name="Execute">
       <command>xdg-open http://localhost:631/</command>
@@ -329,11 +290,13 @@
         <icon>cups</icon>
       </startupnotify>
     </action>
+ 
   </item>
   <separator />
   <item label="Reconfigure Openbox">
     <action name="Reconfigure" />
   </item>
+
 </menu>
 
 <menu id="root-menu" label="Openbox 3">
