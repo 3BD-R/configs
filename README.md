@@ -1,6 +1,6 @@
 # my openbox configs
 ### install
-- openbox-patched
+- openbox or openbox-patched 
 - [picom](https://github.com/ibhagwan/picom) or from [AUR](https://aur.archlinux.org/packages/picom-ibhagwan-git/)
 - conky > "as dock and time widget and more"
 - obkey-gtk3 > "help in key binding"
